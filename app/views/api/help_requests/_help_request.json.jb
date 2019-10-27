@@ -1,0 +1,5 @@
+{
+  id: help_request.id,
+  participation_id: help_request.participation_id,
+  completed_time: help_request.completed_time
+}

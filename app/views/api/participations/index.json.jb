@@ -1,0 +1,3 @@
+@participations.map do |participation|
+  render partial: 'participation.json.jb', locals: {participation: participation}
+end

@@ -1,0 +1,3 @@
+@teachers.map do |teacher|
+  render partial: 'teacher.json.jb', locals: {teacher: teacher}
+end

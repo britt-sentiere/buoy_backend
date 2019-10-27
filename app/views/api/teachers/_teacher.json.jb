@@ -1,0 +1,10 @@
+{
+  id: teacher.id,
+  first_name: teacher.first_name,
+  last_name: teacher.last_name,
+  email: teacher.email,
+  password: teacher.password,
+  password_confirmation: teacher.password_confirmation
+  # type: Teacher.type
+
+}

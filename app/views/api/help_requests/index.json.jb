@@ -1,0 +1,3 @@
+@help_requests.map do |help_request|
+  render partial: 'help_request.json.jb', locals: {help_request: help_request}
+end
