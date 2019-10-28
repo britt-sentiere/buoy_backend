@@ -1,3 +1,3 @@
 @courses.map do |course|
-  render partial: 'course.json.jb', locals {course: course}
-end
+  render partial: 'course.json.jb', locals: {course: course}
+end 

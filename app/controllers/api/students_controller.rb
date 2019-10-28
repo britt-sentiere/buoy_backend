@@ -42,7 +42,7 @@ class Api::StudentsController < ApplicationController
   def destroy
     student = Student.find(params[:id])
     student.destroy
-    render 'index.json.jb'
+    render json: {message: "Successfully Removed Student"}
   end
 
 end

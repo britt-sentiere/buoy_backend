@@ -1,7 +1,4 @@
 class HelpRequest < ApplicationRecord
-  belongs_to :student
-  belongs_to :course
-
-  has_many :students
-  has_many :participations
+  belongs_to :participation
+  has_one :student, through: :participation
 end
