@@ -2,14 +2,15 @@ Rails.application.routes.draw do
   namespace :api do
 
     get '/students' => 'students#index'
-    # post '/students' => 'students#create'
+    post '/students' => 'students#create'
     get '/students/:id' => 'students#show'
     # patch '/students/:id' => 'students#update'
     # delete '/students/:id' => 'students#destroy'
+    post '/sessions' => 'sessions#create'
 
-    # get '/teachers' => 'teachers#index'
+    get '/teachers' => 'teachers#index'
     # post '/teachers' => 'teachers#create'
-    # get '/teachers/:id' => 'teachers#show'
+    get '/teachers/:id' => 'teachers#show'
     # patch '/teachers/:id' => 'teachers#update'
     # delete '/teachers/:id' => 'teachers#destroy'
 

@@ -14,6 +14,7 @@ class Api::CoursesController < ApplicationController
 
     if @course.save
       render 'show.json.jb'
+    end
   end
 
   def show

@@ -12,6 +12,7 @@ class Api::HelpRequestsController < ApplicationController
 
     if @help_request.save
       render 'show.json.jb'
+    end
   end
 
   def show

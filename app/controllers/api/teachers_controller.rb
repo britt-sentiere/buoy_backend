@@ -15,6 +15,7 @@ class Api::TeachersController < ApplicationController
 
     if @teacher.save
       render 'show.json.jb'
+    end
   end
 
   def show

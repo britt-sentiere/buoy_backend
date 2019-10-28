@@ -12,6 +12,7 @@ class Api::ParticipationsController < ApplicationController
 
     if @participation.save
       render 'show.json.jb'
+    end
   end
 
   def show
