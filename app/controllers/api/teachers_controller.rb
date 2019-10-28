@@ -11,7 +11,6 @@ class Api::TeachersController < ApplicationController
                           email: params[:email],
                           password: params[:password],
                           password_confirmation: params[:password_confirmation]
-                          # type: params[:Teacher]
                           )
 
     if @teacher.save

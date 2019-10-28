@@ -3,7 +3,7 @@ class Api::StudentsController < ApplicationController
   def index
     @students = Student.all
     render 'index.json.jb'
-  end 
+  end
 
   def create
     @student = Student.new(
@@ -12,12 +12,12 @@ class Api::StudentsController < ApplicationController
                           email: params[:email],
                           password: params[:password],
                           password_confirmation: params[:password_confirmation]
-                          # type: params[:Student]
                           )
 
     if @student.save
       render 'show.json.jb'
-  end
+    end
+  end 
 
   def show
     @student = Student.find(params[:id])
