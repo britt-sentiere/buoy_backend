@@ -2,8 +2,11 @@
   id: student.id,
   first_name: student.first_name,
   last_name: student.last_name,
-  email: student.email,
-  password:student.password,
-  password_confirmation: student.password_confirmation,
+  email: student.email
+  # help_request_counts: student.help_requests.count
+  help_request_counts: student.number_of_hand_raises
+ 
+ # model method that counts number of help_requests for a student in a day
 
 }
+

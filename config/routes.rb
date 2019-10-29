@@ -23,7 +23,7 @@ Rails.application.routes.draw do
 
     get '/help_requests' => 'help_requests#index'
     # post '/help_requests' => 'help_requests#create'
-    # get '/help_requests/:id' => 'help_requests#show'
+    get '/help_requests/:id' => 'help_requests#show'
     # patch '/help_requests/:id' => 'help_requests#update'
     # delete '/help_requests/:id' => 'help_requests#destroy'
 
