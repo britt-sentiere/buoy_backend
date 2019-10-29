@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     get '/students/:id' => 'students#show'
     patch '/students/:id' => 'students#update'
     delete '/students/:id' => 'students#destroy'
+    post '/sessions' => 'sessions#create'
 
     get '/teachers' => 'teachers#index'
     post '/teachers' => 'teachers#create'
@@ -13,7 +14,6 @@ Rails.application.routes.draw do
     patch '/teachers/:id' => 'teachers#update'
     delete '/teachers/:id' => 'teachers#destroy'
 
-    post '/sessions' => 'sessions#create'
 
     get '/courses' => 'courses#index'
     # post '/courses' => 'courses#create'
