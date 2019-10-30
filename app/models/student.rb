@@ -5,12 +5,10 @@ class Student < User
   has_many :teachers, through: :courses
 
   def number_of_hand_raises
-    # date = Date.today
-
-    # date.to_time.in_time_zone('America/Chicago').beginning_of_day
-
-    beginning_of_day =  Time.now # find a datetime object
-    end_of_day = Time.now # find a datetime object
-    help_requests.where("created_at <= ? AND created_at >= ?", beginning_of_day, end_of_day).count
+   
+    beginning_of_day =  Time.now.beginning_of_day # find a datetime object
+    end_of_day = Time.now.end_of_day # find a datetime object
+    created_at = Time.now
+    help_requests.where("created_at >= ? AND created_at <= ?", beginning_of_day, end_of_day).count
   end
 end
