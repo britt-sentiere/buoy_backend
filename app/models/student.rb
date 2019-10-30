@@ -6,9 +6,9 @@ class Student < User
 
   def number_of_hand_raises
    
-    beginning_of_day =  Time.now.beginning_of_day # find a datetime object
-    end_of_day = Time.now.end_of_day # find a datetime object
-    created_at = Time.now
+
+    beginning_of_day =  Time.now.beginning_of_day.strftime # find a datetime object
+    end_of_day = Time.now.end_of_day.strftime # find a datetime object
     help_requests.where("created_at >= ? AND created_at <= ?", beginning_of_day, end_of_day).count
   end
 end
