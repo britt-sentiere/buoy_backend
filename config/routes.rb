@@ -31,7 +31,7 @@ Rails.application.routes.draw do
     # post '/participations' => 'participations#create'
     get '/participations/:id' => 'participations#show'
     # patch '/participations/:id' => 'participations#update'
-    # delete '/participations/:id' => 'participations#destroy'
+    delete '/participations/:id' => 'participations#destroy'
 
   end 
 end
