@@ -1,4 +1,5 @@
 class Student < User
+  # validates: :course_id, presence: true, uniqueness: true
   has_many :participations
   has_many :courses, through: :participations
   has_many :help_requests, through: :participations

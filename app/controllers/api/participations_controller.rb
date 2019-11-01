@@ -1,6 +1,6 @@
 class Api::ParticipationsController < ApplicationController
   def index
-    @participations = Participation.all
+    @participations = current_user.participations
     render 'index.json.jb'
   end 
 

@@ -1,5 +1,5 @@
 {
   id: participation.id,
-  course_id: participation.course_id,
-  student_id: participation.student_id
+  course: (render partial: 'api/courses/course.json.jb', locals: {course: participation.course}),
+  student: (render partial: 'api/students/student.json.jb', locals: {student: participation.student})
 }

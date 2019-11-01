@@ -1,5 +1,5 @@
 {
   id: course.id,
   course_name: course.course_name,
-  teacher_id: course.teacher_id
+  teacher: (render partial: 'api/teachers/teacher.json.jb', locals: {teacher: course.teacher})
 }
