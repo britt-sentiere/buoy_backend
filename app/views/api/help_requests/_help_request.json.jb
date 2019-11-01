@@ -1,5 +1,6 @@
 {
   id: help_request.id,
   participation_id: help_request.participation_id,
+  created_at: help_request.created_at,
   completed_time: help_request.completed_time
 }

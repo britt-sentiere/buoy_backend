@@ -22,7 +22,7 @@ Rails.application.routes.draw do
     # delete '/courses/:id' => 'courses#destroy'
 
     get '/help_requests' => 'help_requests#index'
-    # post '/help_requests' => 'help_requests#create'
+    post '/help_requests' => 'help_requests#create'
     get '/help_requests/:id' => 'help_requests#show'
     # patch '/help_requests/:id' => 'help_requests#update'
     # delete '/help_requests/:id' => 'help_requests#destroy'
@@ -31,7 +31,7 @@ Rails.application.routes.draw do
     # post '/participations' => 'participations#create'
     get '/participations/:id' => 'participations#show'
     # patch '/participations/:id' => 'participations#update'
-    delete '/participations/:id' => 'participations#destroy'
+    # delete '/participations/:id' => 'participations#destroy'
 
   end 
 end

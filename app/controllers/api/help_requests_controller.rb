@@ -6,12 +6,13 @@ class Api::HelpRequestsController < ApplicationController
 
   def create
     @help_request = HelpRequest.new(
-                          participation_id: params[:participation_id],
-                          completed_time: params[:completed_time]
+                          participation_id: params[:participation_id]
                           )
 
     if @help_request.save
       render 'show.json.jb'
+    else 
+      render json: { errors: @help_request.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
