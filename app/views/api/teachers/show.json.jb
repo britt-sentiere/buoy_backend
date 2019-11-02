@@ -1,1 +1,13 @@
-render partial: 'teacher.json.jb', locals: {teacher: @teacher}
+# render partial: 'teacher.json.jb', locals: {teacher: @teacher}
+
+{
+  id: @teacher.id,
+  first_name: @teacher.first_name,
+  last_name: @teacher.last_name,
+  email: @teacher.email,
+  courses: @teacher.courses.map { |course| 
+    render partial: 'api/courses/course.json.jb', locals: {course: course}
+}
+  
+
+}
