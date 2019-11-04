@@ -14,12 +14,10 @@ class Student < User
   end
 
   def open_help_request
-    help_requests[0] || help_requests.order(created_at: :desc).find_by(completed_time: nil).created_at
+    last_request = help_requests[0] && help_requests.order(created_at: :desc).find_by(completed_time: nil)
+    last_request && last_request
   end
 
-  def formatted_help_request
-    last_request = open_help_request 
-    last_request || last_request.strftime("%b %e, %l:%M %p")
-  end
+  
 end
 

@@ -3,7 +3,7 @@
   id: @course.id,
   course_name: @course.course_name,
   teacher: (render partial: 'api/teachers/teacher.json.jb', locals: {teacher: @course.teacher}),
-  participations: @course.participations.map { |participation| 
+  participations: @course.participations_ordered_by_help_requests.map { |participation| 
     render partial: 'api/participations/participation.json.jb', locals: {participation: participation}
   }
 }
