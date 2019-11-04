@@ -45,4 +45,6 @@ class Api::StudentsController < ApplicationController
     render json: {message: "Successfully Removed Student"}
   end
 
+
+
 end

@@ -25,7 +25,7 @@ Rails.application.routes.draw do
     post '/help_requests' => 'help_requests#create'
     get '/help_requests/:id' => 'help_requests#show'
     # patch '/help_requests/:id' => 'help_requests#update'
-    # delete '/help_requests/:id' => 'help_requests#destroy'
+    delete '/help_requests/:id' => 'help_requests#destroy'
 
     get '/participations' => 'participations#index'
     # post '/participations' => 'participations#create'

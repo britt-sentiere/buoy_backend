@@ -12,4 +12,14 @@ class Student < User
     end_of_day = Time.now.end_of_day.strftime 
     help_requests.where("created_at >= ? AND created_at <= ?", beginning_of_day, end_of_day).count
   end
+
+  def open_help_request
+    help_requests[0] || help_requests.order(created_at: :desc).find_by(completed_time: nil).created_at
+  end
+
+  def formatted_help_request
+    last_request = open_help_request 
+    last_request || last_request.strftime("%b %e, %l:%M %p")
+  end
 end
+
