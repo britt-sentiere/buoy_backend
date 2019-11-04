@@ -19,7 +19,12 @@ class Api::TeachersController < ApplicationController
   end
 
   def show
-    @teacher = Teacher.find(params[:id])
+    if params[:id] == "current"
+      @teacher = current_user
+    else
+      @teacher = Teacher.find(params[:id])
+    end
+    
     render 'show.json.jb'
   end
 
