@@ -1,5 +1,6 @@
 class HelpRequest < ApplicationRecord
   belongs_to :participation
+  has_one :course, through: :participation
   has_one :student, through: :participation
 
   def formatted_created_at

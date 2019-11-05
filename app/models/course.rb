@@ -7,7 +7,12 @@ class Course < ApplicationRecord
   has_many :help_requests, through: :participations
 
   def participations_ordered_by_help_requests
-    participations.select { |participation| participation.student.open_help_request }.sort_by { |participation| participation.student.open_help_request.created_at }
+    beginning_of_day =  Time.now.beginning_of_day
+    end_of_day = Time.now.end_of_day
+
+    participations_for_today = participations.joins(:help_requests).where("help_requests.created_at >= ? AND help_requests.created_at <= ?", beginning_of_day, end_of_day)
+
+    participations_for_today.select { |participation| participation.student.open_help_request }.sort_by { |participation| participation.student.open_help_request.created_at }
   end
 end
 

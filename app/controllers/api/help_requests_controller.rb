@@ -34,6 +34,14 @@ class Api::HelpRequestsController < ApplicationController
     end 
   end
 
+  def complete
+    help_request = HelpRequest.find(params[:id])
+    help_request.update(completed_time: Time.now)
+    @course = help_request.course
+
+    render 'api/courses/show.json.jb'
+  end
+
   def destroy
     help_request = HelpRequest.find(params[:id])
     help_request.destroy
