@@ -5,7 +5,7 @@
   last_name: @student.last_name,
   email: @student.email,
   help_request_counts: @student.help_requests.count,
-  # help_request_counts: @student.number_of_hand_raises,
+
   participations: @student.participations.map { |participation| 
     render partial: 'api/participations/participation.json.jb', locals: {participation: participation}
   

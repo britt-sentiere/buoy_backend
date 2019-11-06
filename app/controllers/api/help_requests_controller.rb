@@ -10,6 +10,10 @@ class Api::HelpRequestsController < ApplicationController
                           completed_time: nil
                           )
 
+    puts "*" * 50
+    p @help_request
+    puts "*" * 50
+
     render 'show.json.jb'
   end
 

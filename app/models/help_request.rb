@@ -4,6 +4,6 @@ class HelpRequest < ApplicationRecord
   has_one :student, through: :participation
 
   def formatted_created_at
-    created_at.strftime("%b %e, %l:%M %p")
+    created_at.strftime("%A, %d %b %Y %l:%M %p")
   end
 end

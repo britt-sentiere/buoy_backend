@@ -4,6 +4,6 @@
   last_name: student.last_name,
   email: student.email,
   help_request_counts: student.help_requests.count,
-  open_help_request: (render partial: 'api/help_requests/help_request.json.jb', locals: {help_request: student.open_help_request})
+  open_help_request: student.open_help_request && (render partial: 'api/help_requests/help_request.json.jb', locals: {help_request: student.open_help_request})
  
 }
