@@ -14,6 +14,9 @@ class Api::HelpRequestsController < ApplicationController
     p @help_request
     puts "*" * 50
 
+    # ** ActionCable server info
+    # recreate hash from _participation
+
     render 'show.json.jb'
   end
 
