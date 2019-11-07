@@ -10,12 +10,48 @@ class Api::HelpRequestsController < ApplicationController
                           completed_time: nil
                           )
 
-    puts "*" * 50
-    p @help_request
-    puts "*" * 50
+      participation_for_actioncable = {
+        id: @help_request.participation.id,
+        course: {
+          id: @help_request.participation.course.id,
+          course_name: @help_request.participation.course.course_name,
+          teacher: {
+            id: @help_request.participation.course.teacher.id,
+            first_name: @help_request.participation.course.teacher.first_name,
+            last_name: @help_request.participation.course.teacher.last_name,
+            email: @help_request.participation.course.teacher.email
+          }
+        },
+        student: {
+          id: @help_request.participation.student.id,
+          first_name: @help_request.participation.student.first_name,
+          last_name: @help_request.participation.student.last_name,
+          email: @help_request.participation.student.email,
+          help_request_counts: @help_request.participation.student.help_requests.count,
+          open_help_request: @help_request.participation.student.open_help_request && {
+            id: @help_request.participation.student.open_help_request.id,
+            participation_id: @help_request.participation.student.open_help_request.participation_id,
+            created_at: @help_request.participation.student.open_help_request.created_at,
+            completed_time: @help_request.participation.student.open_help_request.completed_time,
+            formatted: {
+              created_at: @help_request.participation.student.open_help_request.formatted_created_at
+            }
+          }
+        },
+        help_requests: @help_request.participation.help_requests.order(:id).map { |help_request| 
+          {
+            id: help_request.id,
+            participation_id: help_request.participation_id,
+            created_at: help_request.created_at,
+            completed_time: help_request.completed_time,
+            formatted: {
+              created_at: help_request.formatted_created_at
+            }
+          }
+        }
+      }
 
-    # ** ActionCable server info
-    # recreate hash from _participation
+     ActionCable.server.broadcast "help_requests_channel", participation_for_actioncable
 
     render 'show.json.jb'
   end
