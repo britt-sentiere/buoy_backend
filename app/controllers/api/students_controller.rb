@@ -13,9 +13,11 @@ class Api::StudentsController < ApplicationController
                           password: params[:password],
                           password_confirmation: params[:password_confirmation]
                           )
-      @student.save
-      render 'show.json.jb'
-    end
+      if @student.save
+        render 'show.json.jb'
+      else 
+        render json: {errors: @student.errors.full_messages}, status: :unprocessable_entity
+      end 
   end 
 
   def show
@@ -32,7 +34,6 @@ class Api::StudentsController < ApplicationController
 
     if @student.save
       render 'show.json.jb'
-
     else 
       render json: {errors: @student.errors.full_messages}, status: :unprocessable_entity
     end 
