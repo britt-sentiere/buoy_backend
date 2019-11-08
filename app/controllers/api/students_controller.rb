@@ -13,8 +13,7 @@ class Api::StudentsController < ApplicationController
                           password: params[:password],
                           password_confirmation: params[:password_confirmation]
                           )
-
-    if @student.save
+      @student.save
       render 'show.json.jb'
     end
   end 

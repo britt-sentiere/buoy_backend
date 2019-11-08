@@ -79,6 +79,21 @@ class Api::HelpRequestsController < ApplicationController
     help_request.update(completed_time: Time.now)
     @course = help_request.course
 
+    help_requests_for_actioncable = help_request.student.help_requests.map {|help_request_obj|
+      {
+        id: help_request_obj.id,
+        completed_time: help_request_obj.completed_time,
+        participation_id: help_request_obj.participation_id,
+        created_at: help_request_obj.created_at,
+        formatted: {
+          created_at: help_request_obj.formatted_created_at
+        }
+      }
+    }
+
+
+    ActionCable.server.broadcast "students_channel", help_requests_for_actioncable
+
     render 'api/courses/show.json.jb'
   end
 
