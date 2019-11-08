@@ -1,8 +1,8 @@
 # Teacher.create!([
 #   {first_name: "Miss", last_name: "Honey", email: "misshoney96@gmail.com", password: "password", password_confirmation: "password", type: "Teacher"},
 #   {first_name: "Walter", last_name: "White", email: "theonewhoknocks@gmail.com", password: "password", password_confirmation: "password", type: "Teacher"},
-  {first_name: "George", last_name: "Feeny", email: "mrfeeny@aol.com", password: "password", password_confirmation: "password", type: "Teacher"}
-])
+  # {first_name: "George", last_name: "Feeny", email: "mrfeeny@aol.com", password: "password", password_confirmation: "password", type: "Teacher"}
+# ])
 Course.create!([
   {course_name: "Chemistry", teacher_id: 3},
   {course_name: "History", teacher_id: 2},
