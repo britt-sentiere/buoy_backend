@@ -2,5 +2,5 @@
   id: participation.id,
   course: (render partial: 'api/courses/course.json.jb', locals: {course: participation.course}),
   student: (render partial: 'api/students/student.json.jb', locals: {student: participation.student}),
-  help_requests: participation.help_requests.order(:id).map { |help_request| render partial: "api/help_requests/help_request.json.jb", locals: {help_request: help_request}}
+  help_requests: participation.help_requests.order(id: :desc).map { |help_request| render partial: "api/help_requests/help_request.json.jb", locals: {help_request: help_request}}
 }
